@@ -1,16 +1,17 @@
-FROM python:3.8
+FROM python:3.9
 ENV PYTHONUNBUFFERED 1
 
 # Allows docker to cache installed dependencies between builds
 COPY ./Pipfile rPipfile
 COPY ./Pipfile.lock Pipfile.lock
-RUN pipenv install
-
 # Adds our application code to the image
 COPY . code
 WORKDIR code
 
+RUN set -ex && pip install -U pipenv
+RUN set -ex && pipenv install --deploy --system
+
 EXPOSE 8000
 
 # Run the production server
-CMD newrelic-admin run-program gunicorn --bind 0.0.0.0:$PORT --access-logfile - app.wsgi:application
+CMD gunicorn --bind 0.0.0.0:$PORT --access-logfile - app.wsgi:application
