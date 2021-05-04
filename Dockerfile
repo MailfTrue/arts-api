@@ -10,6 +10,7 @@ WORKDIR code
 
 RUN set -ex && pip install -U pipenv
 RUN set -ex && pipenv install --deploy --system
+RUN python manage.py collectstatic
 
 EXPOSE 8000
 
