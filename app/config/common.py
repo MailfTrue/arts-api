@@ -15,6 +15,7 @@ class Common(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'corsheaders',
 
 
         # Third party apps
@@ -37,7 +38,12 @@ class Common(Configuration):
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
+        'django.middleware.common.CommonMiddleware',
     )
+
+    CORS_ALLOW_ALL_ORIGINS = True
+    CORS_URLS_REGEX = r'^/api/.*$'
 
     ALLOWED_HOSTS = ["*"]
     ROOT_URLCONF = 'app.urls'
