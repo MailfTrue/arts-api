@@ -1,4 +1,4 @@
-site_name: app
+site_name: Arts
 site_description: Api for arts
 repo_url: https://github.com/MailfTrue/arts
 site_dir: site
@@ -10,3 +10,5 @@ nav:
   - API:
     - Authentication: 'api/authentication.md'
     - Users: 'api/users.md'
+    - Art work: 'api/art-work.md'
+theme: material

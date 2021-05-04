@@ -24,7 +24,7 @@ class Common(Configuration):
 
         # Your apps
         'app.users',
-
+        'app.arts',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
@@ -60,11 +60,11 @@ class Common(Configuration):
 
     # General
     APPEND_SLASH = False
-    TIME_ZONE = 'UTC'
-    LANGUAGE_CODE = 'en-us'
+    TIME_ZONE = 'Europe/Moscow'
+    LANGUAGE_CODE = 'ru'
     # If you set this to False, Django will make some optimizations so as not
-    # to load the internationalization machinesry.
-    USE_I18N = False
+    # to load the internationalization machines.
+    USE_I18N = True
     USE_L10N = True
     USE_TZ = True
     LOGIN_REDIRECT_URL = '/'

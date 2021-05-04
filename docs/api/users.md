@@ -17,10 +17,6 @@ first_name | string | No       | The user's given name.
 last_name  | string | No       | The user's family name.
 email      | string | No       | The user's email address.
 
-*Note:*
-
-- Not Authorization Protected
-
 **Response**:
 
 ```json
@@ -28,12 +24,19 @@ Content-Type application/json
 201 Created
 
 {
-  "id": "6d5f9bae-a31b-4b7b-82c4-3853eda2b011",
-  "username": "richard",
-  "first_name": "Richard",
-  "last_name": "Hendriks",
-  "email": "richard@piedpiper.com",
-  "auth_token": "132cf952e0165a274bf99e115ab483671b3d9ff6"
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 1,
+      "image": "/media/sculpture.jpeg",
+      "title": "My best sculpture",
+      "description": "Awesome text",
+      "type": "sculpture",
+      "show": true
+    }
+  ]
 }
 ```
 
